@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/herokunt/travel-site-practice#readme",
   "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "css-loader": "^3.4.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.2.1",
+    "postcss-simple-vars": "^5.0.2",
+    "style-loader": "^1.1.1",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10"
   },

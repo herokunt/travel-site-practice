@@ -1,1 +1,3 @@
-alert('Webpack is working nicely.');
+import '../styles/styles.css';
+
+console.log('webpack loaded');
