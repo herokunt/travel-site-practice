@@ -1,3 +1,5 @@
 import '../styles/styles.css';
 
-console.log('webpack loaded');
+if(module.hot){
+  module.hot.accept();
+}
