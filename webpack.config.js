@@ -22,7 +22,7 @@ module.exports = {
     port: 3000,
     // host: '0.0.0.0'
   },
-  mode: 'development',
+  // mode: 'development',
   // watch: true,
   module: {
     rules: [{

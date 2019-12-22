@@ -1,0 +1,16 @@
+.wrapper {
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--medium {
+    max-width: 960px;
+  }
+
+  .wrapper { /* Any wrapper inside another wrapper should cancel each other */
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

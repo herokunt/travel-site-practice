@@ -1,0 +1,28 @@
+.page-section {
+  padding: 1rem;
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--blue {
+    background-color: $mainBlue;
+    color: #fff;
+  }
+
+  &__feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin atSmall{
+    padding: 4.5rem 0;
+  }
+}
