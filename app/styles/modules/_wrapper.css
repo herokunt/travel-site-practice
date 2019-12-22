@@ -1,7 +1,7 @@
 .wrapper {
   padding-left: 18px;
   padding-right: 18px;
-  max-width: 1200px;
+  max-width: 1236px;
   margin-left: auto;
   margin-right: auto;
 
@@ -12,5 +12,13 @@
   .wrapper { /* Any wrapper inside another wrapper should cancel each other */
     padding-left: 0;
     padding-right: 0;
+  }
+
+  &--margin-b-4 {
+    margin-bottom: 1.5rem;
+
+    @mixin atMedium{
+      margin-bottom: 4rem;
+    }
   }
 }

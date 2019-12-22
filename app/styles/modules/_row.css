@@ -1,8 +1,6 @@
 .row {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   @mixin atMedium {
     flex-direction: row;
@@ -10,26 +8,40 @@
 
   &__column {
     flex-direction: column;
-    justify-content: space-around;
 
     @mixin atMedium {
       margin: 0 2rem;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
     }
 
     &--one-third {
-
       @mixin atMedium {
         width: 33%;
       }
     }
 
-    &--two-thirds {
+    &--two-fifths {
+      @mixin atMedium {
+        width: 40%;
+      }
+    }
 
+    &--three-fifths {
+      @mixin atMedium {
+        width: 60%;
+      }
+    }
+
+    &--two-thirds {
       @mixin atMedium {
         width: 66%;
+      }
+    }
+
+    &--margin-b-on-small {
+      margin-bottom: 1rem;
+
+      @mixin atMedium {
+        margin-bottom: 0;
       }
     }
 
