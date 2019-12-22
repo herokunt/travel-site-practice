@@ -1,0 +1,40 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @mixin atMedium {
+    flex-direction: row;
+  }
+
+  &__column {
+    flex-direction: column;
+    justify-content: space-around;
+
+    @mixin atMedium {
+      margin: 0 2rem;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    &--one-third {
+
+      @mixin atMedium {
+        width: 33%;
+      }
+    }
+
+    &--two-thirds {
+
+      @mixin atMedium {
+        width: 66%;
+      }
+    }
+
+    &--marginless {
+      margin: 0;
+    }
+  }
+}

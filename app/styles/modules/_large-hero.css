@@ -21,12 +21,6 @@
     margin: 0;
 
     @mixin atSmall {
-      color: green;
-      font-size: 4.8rem;
-    }
-
-    @mixin atMedium {
-      color: red;
       font-size: 4.8rem;
     }
   }
