@@ -1,6 +1,15 @@
 .page-section {
   padding: 1rem;
 
+   &--narrow-on-small {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atSmall {
+      padding: inherit;
+    }
+  }
+
   &--centered {
     text-align: center;
   }
@@ -8,6 +17,17 @@
   &--blue {
     background-color: $mainBlue;
     color: #fff;
+  }
+
+  &__testimonials {
+    background-color: #e0e6ef;
+    padding-bottom: 0;
+
+    @mixin atMedium {
+      padding-bottom: inherit;
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      background-size: cover;
+    }
   }
 
   @mixin atSmall{

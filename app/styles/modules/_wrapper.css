@@ -9,6 +9,33 @@
     max-width: 960px;
   }
 
+  &--not-on-small {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atSmall {
+      padding: inherit;
+    }
+  }
+
+  &--not-on-medium {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding: inherit;
+    }
+  }
+
+  &--not-on-large {
+    padding-left: 0;
+    padding-right: 0;
+
+    @mixin atLarge {
+      padding: inherit;
+    }
+  }
+
   .wrapper { /* Any wrapper inside another wrapper should cancel each other */
     padding-left: 0;
     padding-right: 0;

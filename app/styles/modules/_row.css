@@ -2,11 +2,24 @@
   display: flex;
   flex-direction: column;
 
+  &--padding-t {
+    padding-top: 80px;
+  }
+
   @mixin atMedium {
     flex-direction: row;
   }
 
+  &--horizontal-at-large {
+    flex-direction: column;
+
+    @mixin atLarge {
+      flex-direction: row;
+    }
+  }
+
   &__column {
+    display: inherit;
     flex-direction: column;
 
     @mixin atMedium {
@@ -15,6 +28,12 @@
 
     &--one-third {
       @mixin atMedium {
+        width: 33%;
+      }
+    }
+
+    &--one-third-at-large {
+      @mixin atLarge {
         width: 33%;
       }
     }
@@ -37,11 +56,41 @@
       }
     }
 
-    &--margin-b-on-small {
+    &--margin-1-on-small {
       margin-bottom: 1rem;
 
       @mixin atMedium {
-        margin-bottom: 0;
+        margin-bottom: inherit;
+      }
+    }
+
+    &--margin-b-2-on-small {
+      margin-bottom: 2rem;
+
+      @mixin atMedium {
+        margin-bottom: inherit;
+      }
+    }
+
+    &--margin-b-3-on-small {
+      margin-bottom: 3rem;
+
+      @mixin atMedium {
+        margin-bottom: inherit;
+      }
+    }
+    &--margin-b-6-on-small {
+      margin-bottom: 6rem;
+
+      @mixin atMedium {
+        margin-bottom: inherit;
+      }
+    }
+    &--margin-b-6-on-large{
+      margin-bottom: 6rem;
+
+      @mixin atLarge {
+        margin-bottom: inherit;
       }
     }
 
