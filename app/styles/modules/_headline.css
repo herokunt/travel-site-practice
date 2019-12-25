@@ -23,6 +23,10 @@
     color: $mainOrange;
   }
 
+  &--white {
+    color: #fff;
+  }
+
   &--nawrrow {
     max-width: 500px;
     margin-left: auto;
