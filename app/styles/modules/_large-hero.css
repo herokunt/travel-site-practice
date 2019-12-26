@@ -19,10 +19,11 @@
     color: $mainBlue;
     font-weight: 300;
     font-size: 2.4rem;
-    margin: 0;
+    margin: 2rem 0 0 0;
 
     @mixin atSmall {
       font-size: 4rem;
+      margin-top: 2rem;
     }
 
     @mixin atMedium {
