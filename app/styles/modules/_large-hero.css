@@ -13,20 +13,31 @@
     transform: translate(-50%, -50%);
     text-align: center;
     min-width: 300px;
+
+    @mixin atSmall {
+      top: 55%;
+    }
+
+    @mixin atMedium {
+      min-width: 500px;
+    }
   }
 
   &__title {
     color: $mainBlue;
     font-weight: 300;
-    font-size: 2.4rem;
+    font-size: 3rem;
     margin: 2rem 0 0 0;
 
     @mixin atSmall {
-      font-size: 4rem;
-      margin-top: 2rem;
+      font-size: 3rem;
     }
 
     @mixin atMedium {
+      font-size: 4.5rem;
+    }
+
+    @mixin atLarge {
       font-size: 4.8rem;
     }
   }
@@ -38,7 +49,7 @@
     margin: 0;
 
     @mixin atSmall{
-      font-size: 2.9rem
+      font-size: 2.6rem
     }
   }
 

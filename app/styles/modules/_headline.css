@@ -7,6 +7,12 @@
     margin-top: 0;
   }
 
+  &--margin-t-0-on-medium {
+    @mixin atMedium {
+      margin-top: 0;
+    }
+  }
+
   &--centered {
     text-align: center;
   }

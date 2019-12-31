@@ -14,7 +14,6 @@
     padding-right: 0;
 
     @mixin atSmall {
-      padding: inherit;
     }
   }
 
@@ -23,7 +22,6 @@
     padding-right: 0;
 
     @mixin atMedium {
-      padding: inherit;
     }
   }
 
@@ -32,7 +30,6 @@
     padding-right: 0;
 
     @mixin atLarge {
-      padding: inherit;
     }
   }
 
