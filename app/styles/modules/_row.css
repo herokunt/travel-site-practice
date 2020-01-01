@@ -1,6 +1,7 @@
 .row {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   &--padding-t {
     padding-top: 80px;

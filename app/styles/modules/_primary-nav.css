@@ -1,4 +1,12 @@
 .primary-nav {
+
+  @mixin atMedium {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 0.5rem;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
@@ -27,15 +35,13 @@
     text-decoration: none;
     color: #fff;
     font-size: 1.1rem;
+
     @mixin atMedium {
       font-weight: 300;
-    }
-  }
 
-  @mixin atMedium {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0.5rem;
+      &.is-current-link {
+        color: #fabb69;
+      }
+    }
   }
 }

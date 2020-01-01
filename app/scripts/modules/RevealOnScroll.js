@@ -13,7 +13,7 @@ class RevealOnScroll {
 
   events(){
     window.addEventListener('scroll', this.scrollThrottle);
-    window.addEventListener('resize', debounce(() => { this.browserHeight = window.innerHeight }, 350));
+    window.addEventListener('resize', debounce(() => this.browserHeight = window.innerHeight, 350));
   };
 
   hideItemsOnLoad(){
@@ -41,7 +41,10 @@ class RevealOnScroll {
         item.isHidden = false;
 
         if(item.isLastItem){
-          window.removeEventListener('scroll', this.scrollThrottle);
+          this.hiddenItems = this.hiddenItems.filter(item => item.isHidden === false);
+          if(this.hiddenItems.length){
+            window.removeEventListener('scroll', this.scrollThrottle);
+          }
         }
       }
     }
