@@ -62,7 +62,6 @@ if(currentTask == 'dev'){
     port: 3000,
     // host: '0.0.0.0'
   };
-
 }
 
 if(currentTask == 'build'){
@@ -93,6 +92,7 @@ if(currentTask == 'build'){
   config.optimization = {
     splitChunks: { chunks: 'all' }
   };
+
   config.plugins.push(
     new CleanWebpackPlugin(),
     new MiniCSSExtractPlugin({ filename: 'styles.[chunkhash].css' }),
