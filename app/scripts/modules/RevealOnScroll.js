@@ -3,7 +3,7 @@ import debounce from 'lodash/debounce';
 
 class RevealOnScroll {
   constructor(elements, revealThreshold){
-    this.hiddenItems = elements;
+    this.hiddenItems = Array.from(elements);
     this.revealThreshold = revealThreshold;
     this.browserHeight = window.innerHeight;
     this.scrollThrottle = throttle(this.calcCaller, 200).bind(this);
@@ -41,9 +41,12 @@ class RevealOnScroll {
         item.isHidden = false;
 
         if(item.isLastItem){
-          this.hiddenItems = this.hiddenItems.filter(item => item.isHidden === false);
-          if(this.hiddenItems.length){
+          this.hiddenItems = this.hiddenItems.filter(item => item.isHidden === true);
+
+          if(this.hiddenItems.length === 0){
             window.removeEventListener('scroll', this.scrollThrottle);
+          } else {
+            this.hiddenItems[this.hiddenItems.length - 1].isLastItem = true;
           }
         }
       }
