@@ -1,5 +1,4 @@
-import throttle from 'lodash/throttle';
-import debounce from 'lodash/debounce';
+import { throttle, debounce } from 'lodash';
 
 class RevealOnScroll {
   constructor(elements, revealThreshold){
@@ -25,6 +24,7 @@ class RevealOnScroll {
   };
 
   calcCaller(){
+    console.log('runn')
     this.hiddenItems.forEach(item => {
       if(item.isHidden){
         this.calculateScrollPosition(item);
