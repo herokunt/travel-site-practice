@@ -1,10 +1,10 @@
 import React from 'react';
 
-const MyAmazingComponent = () => {
+const MyAmazingComponent = ({ title, body }) => {
   return (
-    <div className="headline headline--blue">
-      <h1>This is a React Component</h1>
-      <p>Yay!!!</p>
+    <div className="wrapper wrapper--medium wrapper--center-items">
+      <h2 className="section-title section-title--blue">{title}</h2>
+      <p>{body}</p>
     </div>
   )
 };

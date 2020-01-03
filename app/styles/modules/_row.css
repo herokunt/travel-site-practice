@@ -9,6 +9,7 @@
 
   @mixin atMedium {
     flex-direction: row;
+    overflow: visible;
   }
 
   &--horizontal-at-large {

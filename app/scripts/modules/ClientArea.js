@@ -3,6 +3,7 @@ import Axios from 'axios';
 class ClientArea {
   constructor(){
     this.injectHTML();
+    this.clientArea = document.querySelector('.client-area');
     this.reactBtn = document.querySelector('.react-trigger');
     this.events();
   }
@@ -11,18 +12,23 @@ class ClientArea {
     this.reactBtn.addEventListener('click', () => this.sendRequest());
   }
 
-  // sendRequest(){
-  //   Axios.post('https://determined-heyrovsky-208429.netlify.com/', { password: this.input.value })
-  //   .then((response) => {
-  //     this.form.remove();
-  //     this.contentArea.innerHTML = response.data;
-  //   })
-  //   .catch(() => {
-  //     this.contentArea.innerHTML = `<p class="client-area__error">That secret phase is not correct, please try again.</p>`;
-  //     this.input.value = '';
-  //     this.input.focus();
-  //   });
-  // }
+  sendRequest(){
+    const url = 'https://determined-heyrovsky-208429.netlify.com/.netlify/functions/my-cloud-function';
+
+    Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
+    .then((response) => {
+      this.clientArea.remove();
+
+      import('./MyAmazingComponent')
+      .then(component => ReactDOM.render(<component props={response.data} />, document.getElementById('react-goes-here')))
+      .catch(() => console.log('error'));
+    })
+    .catch(() => {
+      this.contentArea.innerHTML = `<p class="client-area__error">That secret phase is not correct, please try again.</p>`;
+      this.input.value = '';
+      this.input.focus();
+    });
+  }
 
   injectHTML(){
     document.body.insertAdjacentHTML('beforeend', `
