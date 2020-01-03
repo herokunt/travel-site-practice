@@ -1,9 +1,9 @@
-module.handler = function(event, context, callback){
+exports.handler = function(event, context, callback){
 
   const headers = {
     "Access-Control-Allow-Origin" : "*",
     "Access-Control-Allow-Headers" : "Content-Type"
-  }
+  };
 
   if(event.httpMethod !== 'POST'){
     return callback(null, {
