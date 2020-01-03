@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MyAmazingComponent from './MyAmazingComponent';
 
 class ClientArea {
   constructor(){
@@ -16,18 +17,15 @@ class ClientArea {
 
   sendRequest(){
     const url = 'https://determined-heyrovsky-208429.netlify.com/.netlify/functions/my-cloud-function';
+
     this.reactBtn.textContent = 'Loading...';
 
     Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
     .then((response) => {
       this.clientArea.remove();
-
-      // ReactDOM.render(<component title={response.data.title} body={response.data.body} />, document.getElementById('react-goes-here'))
-      import('./MyAmazingComponent')
-      .then(component => console.log(component))
-      .catch(() => console.log('error'));
+      ReactDOM.render(<MyAmazingComponent title={response.data.title} body={response.data.body} randomNumber={response.data.randomNumber} />, document.getElementById('react-goes-here'))
     })
-    .catch(() => console.log('error'));
+    .catch((err) => console.log(err));
   }
 
   injectHTML(){

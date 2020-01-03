@@ -14,10 +14,10 @@ new StickyHeader();
 new ClientArea();
 
 // React code goes here
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MyAmazingComponent from './modules/MyAmazingComponent';
+//
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import MyAmazingComponent from './modules/MyAmazingComponent';
 // ReactDOM.render(<MyAmazingComponent title={'test'} body={'testing-body'} />, document.getElementById('react-goes-here'));
 
 // Code splitting the modal component to only load it if/when user clicks on the buttons for that purpose
