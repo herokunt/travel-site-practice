@@ -38,7 +38,17 @@ let config = {
   plugins: pages,
   module: {
     rules: [
-      CSSConfig
+      CSSConfig,
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env']
+          }
+        }
+      }
     ]
   }
 };
@@ -68,17 +78,6 @@ if(currentTask == 'build'){
   config.mode = 'production';
 
   config.entry = ['babel-polyfill', './app/scripts/app.js'];
-
-  config.module.rules.push({
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env']
-      }
-    }
-  });
 
   CSSConfig.use.unshift(MiniCSSExtractPlugin.loader);
   postCSSPlugins.push(require('cssnano'));
