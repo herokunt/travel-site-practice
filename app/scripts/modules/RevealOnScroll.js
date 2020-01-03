@@ -24,7 +24,6 @@ class RevealOnScroll {
   };
 
   calcCaller(){
-    console.log('runn')
     this.hiddenItems.forEach(item => {
       if(item.isHidden){
         this.calculateScrollPosition(item);

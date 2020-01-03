@@ -1,23 +1,26 @@
 import '../styles/styles.css';
 
 import 'lazysizes';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
-// import ClientArea from './modules/ClientArea';
+import ClientArea from './modules/ClientArea';
 
-import MyAmazingComponent from './modules/MyAmazingComponent';
 
 new RevealOnScroll(document.querySelectorAll('.feature-item'), 25);
 new RevealOnScroll(document.querySelectorAll('.testimonial'), 40);
 new MobileMenu();
 new StickyHeader();
-// new ClientArea();
+new ClientArea();
 
-ReactDOM.render(<MyAmazingComponent />, document.getElementById('react-goes-here'));
+// React code goes here
+/*
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MyAmazingComponent from './modules/MyAmazingComponent';
+ReactDOM.render(<MyAmazingComponent props={} />, document.getElementById('react-goes-here'));
+*/
 
 // Code splitting the modal component to only load it if/when user clicks on the buttons for that purpose
 let modal;

@@ -3,42 +3,33 @@ import Axios from 'axios';
 class ClientArea {
   constructor(){
     this.injectHTML();
-    this.form = document.querySelector('.client-area__form');
-    this.input = document.querySelector('.client-area__input');
-    this.contentArea = document.querySelector('.client-area__content-area');
+    this.reactBtn = document.querySelector('.react-trigger');
     this.events();
   }
 
   events(){
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.sendRequest();
-    });
+    this.reactBtn.addEventListener('click', () => this.sendRequest());
   }
 
-  sendRequest(){
-    Axios.post('insertyournetlifyurlhere', { password: this.input.value })
-    .then((response) => {
-      this.form.remove();
-      this.contentArea.innerHTML = response.data;
-    })
-    .catch(() => {
-      this.contentArea.innerHTML = `<p class="client-area__error">That secret phase is not correct, please try again.</p>`;
-      this.input.value = '';
-      this.input.focus();
-    });
-  }
+  // sendRequest(){
+  //   Axios.post('https://determined-heyrovsky-208429.netlify.com/', { password: this.input.value })
+  //   .then((response) => {
+  //     this.form.remove();
+  //     this.contentArea.innerHTML = response.data;
+  //   })
+  //   .catch(() => {
+  //     this.contentArea.innerHTML = `<p class="client-area__error">That secret phase is not correct, please try again.</p>`;
+  //     this.input.value = '';
+  //     this.input.focus();
+  //   });
+  // }
 
   injectHTML(){
     document.body.insertAdjacentHTML('beforeend', `
     <div class="client-area">
-      <div class="wrapper wrapper--medium">
-        <h2 class="section-title section-title--blue">Secret Client Area</h2>
-        <form class="client-area__form" action="">
-          <input class="client-area__input" type="text" placeholder="Enter the secret phrase">
-          <button class="btn btn--orange">Submit</button>
-        </form>
-        <div class="client-area__content-area"></div>
+      <div class="wrapper wrapper--medium wrapper--center-items">
+        <h2 class="section-title section-title--blue">Wanna See Something Cool?</h2>
+        <button class="btn react-trigger">Click Me Now!</button>
       </div>
     </div>
     `)

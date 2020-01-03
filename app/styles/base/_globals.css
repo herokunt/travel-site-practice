@@ -19,3 +19,8 @@ img {
 a {
   color: $mainOrange;
 }
+
+button {
+  border: none;
+  display: inline;
+}
