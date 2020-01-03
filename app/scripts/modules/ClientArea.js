@@ -21,8 +21,10 @@ class ClientArea {
     Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
     .then((response) => {
       this.clientArea.remove();
-      import('./MyAmazingComponent');
-      .then(component => ReactDOM.render(<component props={response.data} />, document.getElementById('react-goes-here')))
+
+      // ReactDOM.render(<component title={response.data.title} body={response.data.body} />, document.getElementById('react-goes-here'))
+      import('./MyAmazingComponent')
+      .then(component => console.log(component))
       .catch(() => console.log('error'));
     })
     .catch(() => console.log('error'));
