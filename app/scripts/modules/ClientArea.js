@@ -21,15 +21,10 @@ class ClientArea {
     Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
     .then((response) => {
       this.clientArea.remove();
-      import('./MyAmazingComponent')
-      .then(component => ReactDOM.render(<component props={response.data} />, document.getElementById('react-goes-here')))
-      .catch(() => console.log('error'));
+      return import('./MyAmazingComponent');
     })
-    .catch(() => {
-      this.contentArea.innerHTML = `<p class="client-area__error">That secret phase is not correct, please try again.</p>`;
-      this.input.value = '';
-      this.input.focus();
-    });
+    .then(component => ReactDOM.render(<component props={response.data} />, document.getElementById('react-goes-here')))
+    .catch(() => console.log('error'));
   }
 
   injectHTML(){
