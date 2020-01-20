@@ -19,13 +19,14 @@ class ClientArea {
     const url = 'https://determined-heyrovsky-208429.netlify.com/.netlify/functions/my-cloud-function';
 
     this.reactBtn.textContent = 'Loading...';
+    ReactDOM.render(<MyAmazingComponent />, this.clientArea);
 
-    Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
-    .then((response) => {
-      this.clientArea.remove();
-      ReactDOM.render(<MyAmazingComponent title={response.data.title} body={response.data.body} randomNumber={response.data.randomNumber} />, document.getElementById('react-goes-here'))
-    })
-    .catch((err) => console.log(err));
+    // Axios.post(url, { randomNumber: Math.floor(Math.random() * 100) })
+    // .then((response) => {
+    //   this.clientArea.remove();
+    //   ReactDOM.render(<MyAmazingComponent title={response.data.title} body={response.data.body} randomNumber={response.data.randomNumber} />, document.getElementById('react-goes-here'))
+    // })
+    // .catch((err) => console.log(err));
   }
 
   injectHTML(){
